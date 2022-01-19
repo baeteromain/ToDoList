@@ -15,3 +15,7 @@
 /vendor/
 /web/bundles/
 /.idea
+/.env.local
+/.env.local.php
+/.env.*.local
+/.env.test
