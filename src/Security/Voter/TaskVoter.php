@@ -13,7 +13,6 @@ class TaskVoter extends Voter
 {
     const TASK_EDIT = 'task_edit';
     const TASK_DELETE = 'task_delete';
-    const ROLE_ANONYMOUS = 'ROLE_ANONYMOUS';
 
     private Security $security;
 
