@@ -33,24 +33,16 @@ class TaskVoter extends Voter
     {
         $user = $token->getUser();
         // if the user is anonymous, do not grant access
-        if (!$user instanceof UserInterface) {
-            return false;
+        if ($user instanceof UserInterface || null !== $task->getUser()) {
+            switch ($attribute) {
+                case self::TASK_EDIT:
+                    return $this->canEdit($task, $user);
+                    break;
+                case self::TASK_DELETE:
+                    return $this->canDelete($task, $user);
+                    break;
+            }
         }
-
-        if (null === $task->getUser()) {
-            return false;
-        }
-
-        // ... (check conditions and return true to grant permission) ...
-        switch ($attribute) {
-            case self::TASK_EDIT:
-                return $this->canEdit($task, $user);
-                break;
-            case self::TASK_DELETE:
-                return $this->canDelete($task, $user);
-                break;
-        }
-
         return false;
     }
 
