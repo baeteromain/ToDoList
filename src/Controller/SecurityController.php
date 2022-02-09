@@ -31,7 +31,7 @@ class SecurityController extends AbstractController
      */
     public function loginCheck()
     {
-        // This code is never executed.
+        return $this->redirectToRoute('login');
     }
 
     /**
