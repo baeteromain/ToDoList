@@ -18,6 +18,7 @@
 /.env.local.php
 /.env.*.local
 /.env.test
+/public/opcache/*
 
 ###> phpunit/phpunit ###
 /phpunit.xml
